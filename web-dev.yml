@@ -47,6 +47,13 @@ management:
 feign:
   hystrix:
     enabled: false
+
+
+data:
+  mongodb:
+    database: lanjing
+    host: localhost
+    port: 27017    
     
 eureka:
   client:
