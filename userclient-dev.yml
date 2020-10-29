@@ -12,11 +12,29 @@ spring:
     port: 6379
     timeout: 5000
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    listener:
+      simple:
+        acknowledge-mode: manual
+      direct:
+        acknowledge-mode: manual
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true  
+
   mvc:
     hiddenmethod:
       filter:
         enabled: false
-
+  
 
 
 
