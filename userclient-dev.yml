@@ -1,9 +1,14 @@
+server:
+  port: 8764
+
 spring:
-
-  thymeleaf:
-    cache: false
-    mode: LEGACYHTML5
-
+  application:
+    name: springcloud-login
+  datasource:
+    url: jdbc:mysql://localhost:3306/ssm?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
   redis:
     database: 0
     host: 127.0.0.1
@@ -17,25 +22,23 @@ spring:
     port: 6379
     timeout: 5000
 
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-    publisher-confirm-type: correlated
-    publisher-returns: true
-    listener:
-      simple:
-        acknowledge-mode: manual
-      direct:
-        acknowledge-mode: manual
-  cloud:
-    bus:
-      enabled: true
-      trace:
-        enabled: true  
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: false
+
+
+
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+
+mybatis:
+  mapper-locations: classpath*:mybatis/*Mapper.xml
+  type-aliases-package: com.jk.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
