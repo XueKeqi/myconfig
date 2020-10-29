@@ -35,24 +35,6 @@ spring:
       trace:
         enabled: true  
 
-  mvc:
-    hiddenmethod:
-      filter:
-        enabled: false
-  
-
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  
-
-feign:
-  hystrix:
-    enabled: false
-
 eureka:
   client:
     service-url:
