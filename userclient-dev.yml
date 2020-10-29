@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ssm?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://localhost:3306/xxx?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
-    password: 
+    password: 123
   zipkin:
     base-url: http://localhost:9411
     sender:
