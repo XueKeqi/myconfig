@@ -17,10 +17,10 @@ spring:
         min-idle: 0
         
   data:
-  mongodb:
-    database: 2004
-    host: localhost
-    port: 27017       
+    mongodb:
+      database: 2004
+      host: localhost
+      port: 27017    
 
 
   rabbitmq:
