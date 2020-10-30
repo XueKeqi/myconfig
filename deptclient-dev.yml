@@ -1,41 +1,37 @@
 spring:
   datasource:
-    url: jdbc:mysql://DESKTOP-QLADQDP:3306/ssm?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://DESKTOP-QLADQDP:3306/ssm?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
     password: 123
-  mvc:
-    hiddenmethod:
-      filter:
-        enabled: false
+  zipkin:
+    base-url: http://localhost:9411
+    sender:
+      type: rabbit
+  sleuth:
+    sampler:
+      probability: 1
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
-
-  thymeleaf:
-    cache: false
-    mode: LEGACYHTML5
-
-
-
-
-
-
-
-
-feign:
-  hystrix:
-    enabled: false
-
-
-
-
+  zipkin:
+    base-url: http://localhost:9411
+    sender:
+      type: rabbit
+  sleuth:
+    sampler:
+      probability: 1  
+    
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-
-
+      
 mybatis:
-  mapper-locations: classpath*:mybatis/*/*Mapper.xml
+  mapper-locations: classpath:mybatis/*Mapper.xml
   type-aliases-package: com.jk.entity
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
