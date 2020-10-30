@@ -17,15 +17,6 @@ spring:
       filter:
         enabled: false
 
-
-  zipkin:
-    base-url: http://localhost:9411
-    sender:
-      type: rabbit
-  sleuth:
-    sampler:
-      probability: 1
-
 eureka:
   client:
     service-url:
